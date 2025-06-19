@@ -1,15 +1,26 @@
 import React from 'react';
 import './App.css';
-import { ButtonComponent, InputFieldComponent } from './components/basic';
+import { ButtonComponent, InputFieldComponent, TextAreaComponent } from './components/basic';
 
 function App() {
-  const [inputValue, setInputValue] = React.useState('');
+  // States to hold the input values
+  const [inputValueButtonInputExample, setInputValueButtonInputExample] = React.useState('');
+  const [inputValueEmailFormExample, setInputValueEmailFormExample] = React.useState('');
+  const [inputValueTextFormExample, setInputValueTextFormExample] = React.useState('');
 
-  const handelButtonInputExample = () => {
-    if (inputValue === '') {
+  const handleButtonInputExample = () => {
+    if (inputValueButtonInputExample === '') {
       alert('You clicked the button without input!');
     } else {
-      alert(inputValue);
+      alert(inputValueButtonInputExample);
+    }
+  };
+
+  const handleEmailFormExample = () => {
+    if (inputValueEmailFormExample === '' && inputValueTextFormExample === '') {
+      alert('You clicked the button without input or text!');
+    } else {
+      alert(`Email: ${inputValueEmailFormExample}\nText: ${inputValueTextFormExample}`);
     }
   };
 
@@ -19,12 +30,30 @@ function App() {
         <ButtonComponent label="Im A Button" onClick={() => alert("You Clicked Me!")}></ButtonComponent>
       </section>
       <section>
-        <ButtonComponent label="Im A Button for the Input" onClick={handelButtonInputExample}></ButtonComponent>
+        <ButtonComponent label="Im A Button for the Input" onClick={handleButtonInputExample}></ButtonComponent>
         <InputFieldComponent 
-          value={inputValue} 
-          onChange={(e) => setInputValue(e.target.value)}
+          value={inputValueButtonInputExample} 
+          onChange={(e) => setInputValueButtonInputExample(e.target.value)}
           type='text' 
           placeholder='Write text here'
+        />
+      </section>
+      <section>
+        <ButtonComponent label="Im A Button for the TextArea" onClick={handleEmailFormExample} type='submit'></ButtonComponent>
+        <InputFieldComponent
+          value={inputValueEmailFormExample}
+          onChange={(e) => setInputValueEmailFormExample(e.target.value)}
+          type="email"
+          placeholder="Enter your email"
+          label="Email input"
+          className={inputValueEmailFormExample.includes('@') ? "valid" : "invalid"}
+        />
+        <TextAreaComponent
+          value={inputValueTextFormExample}
+          onChange={(e) => setInputValueTextFormExample(e.target.value)}
+          placeholder="Enter text here"
+          label="Text Area"
+          className="TextAreaComponentStyle"
         />
       </section>
     </div>

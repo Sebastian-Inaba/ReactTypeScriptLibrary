@@ -14,8 +14,6 @@ interface InputFieldProp {
 }
 
 // The InputFieldComponent functional component 
-// last time the button component was made, it was a bit more customizable in code
-// This time we already define the properties inside the component
 const InputFieldComponent: React.FC<InputFieldProp> = ({
     value, // Default value is an empty string
     onChange, // Function to handle changes in input value
@@ -115,7 +113,7 @@ USAGE EXAMPLES:
 //
 // export default LoginForm;
 
-// 7. Extra example with day 1 button component:
+// 7. Example with day 1 button component:
 // const [inputValue, setInputValue] = React.useState('');
 //
 // const handelButtonInputExample = () => {
