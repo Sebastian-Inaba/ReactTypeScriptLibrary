@@ -38,3 +38,21 @@
   border-color: #007bff;
   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
+
+.InputCheckBoxComponentStyle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  padding: 8px 0;
+  cursor: pointer;
+  user-select: none;
+  color: #333;
+}
+
+.InputCheckBoxComponentStyle input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #007bff; 
+  cursor: pointer;
+}

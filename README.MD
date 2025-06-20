@@ -16,9 +16,10 @@ To make this library easier to use and explore, I’m building a dedicated **Pre
 
 ### Current Progress
 
-- Day 1: Created the first Button component with TypeScript support, props typing, and CSS modules styling.
+- Day 1: Created the first component a button with TypeScript support, props typing, and CSS modules styling.
 - Day 2: Created a input field component with TypeScript, with examples and a example on how you can use with the day 1 component.
-- Day 3: Created a text field component with TS, examples and used with other components 
+- Day 3: Created a text field component with TS, examples and use with other components.
+- Day 4: Created a check box input with TS, examples and use with other component.
 - Planning to add more components in phases, gradually increasing complexity and interactivity, and eventually building the preview UI.
 
 ### Why This Project?

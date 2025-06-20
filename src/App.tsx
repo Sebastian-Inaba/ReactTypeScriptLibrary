@@ -2,8 +2,9 @@ import React from 'react';
 import './App.css';
 import { ButtonComponent, InputFieldComponent, TextAreaComponent } from './components/basic';
 
+
+// Im treating this area as a playground for the components, i might make a better playground later sometime in the future other then just a centered wrapper
 function App() {
-  // States to hold the input values
   const [inputValueButtonInputExample, setInputValueButtonInputExample] = React.useState('');
   const [inputValueEmailFormExample, setInputValueEmailFormExample] = React.useState('');
   const [inputValueTextFormExample, setInputValueTextFormExample] = React.useState('');
