@@ -2,7 +2,7 @@ import React from "react"; // Import React to use JSX and create components
 import style from "./basic.module.css"; // Import CSS module for styling the text area component
 
 interface TextAreaProp {
-    value: string; 
+    value: string; // The value of the textarea, required for controlled components
     onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void; 
     // Required function that takes an event (from an <textarea>) and returns nothing.
     // This defines how an textarea change handler should be structured. 

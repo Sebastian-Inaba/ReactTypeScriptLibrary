@@ -3,3 +3,7 @@
 export {default as ButtonComponent} from "./button"
 export {default as InputFieldComponent} from "./inputField"
 export {default as TextAreaComponent} from "./textArea"
+export {default as InputCheckBoxComponent} from "./checkBox"
+export {default as ToggleSwitchComponent} from "./switchCheckBox"
+export {default as InputRadioComponent} from "./radioButton"
+export {default as SelectDropdownComponent} from "./selectDropdown"

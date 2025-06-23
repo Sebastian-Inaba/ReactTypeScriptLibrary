@@ -6,12 +6,12 @@ import style from './basic.module.css'; // Import CSS module for styling the but
 // type is a TypeScript feature that can define aliases for primitive types, unions, objects, or combinations of types.
 // It is more flexible than interface and is often used for unions like string literals or to combine multiple types.
 interface ButtonProp {
-    label: string;
-    onClick?: () => void; 
-    // Optional function that takes no arguments and returns nothing.
-    // This defines the expected shape of a click handler function. 
+    label: string; // The text displayed on the button, required for the button to have a label
+    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void; 
+    // Required function that takes an event (from an <button> click) and returns nothing.
+    // This defines how an button click handler should be structured.
     disabled?: boolean;
-    type?: "button" | "submit" | "reset";
+    type?: "button" | "submit" | "reset"; // The type of button, can be "button", "submit", or "reset". Can leave this out, default is "button"
     className?: string;
 }
 
@@ -32,6 +32,7 @@ const ButtonComponent: React.FC<ButtonProp> = ({
             onClick={onClick}
             disabled={disabled}
             type={type}
+            aria-label={label} // Accessibility label for screen readers
         >
             {label}
         </button>

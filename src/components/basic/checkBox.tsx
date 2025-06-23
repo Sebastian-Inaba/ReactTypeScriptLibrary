@@ -8,8 +8,9 @@ interface InputCheckBoxProp {
     // Required function that takes an event (from an <input>) and returns nothing.
     // This defines how an input change handler should be structured. 
     type?: string;
-    label?: string;
-    className?: string;
+    labelClassName?: string; 
+    inputClassName?: string;
+    label?: string; // Optional label for the checkbox, displayed for user clarity
 }
 
 // The InputCheckBoxComponent functional component
@@ -18,15 +19,17 @@ const InputCheckBoxComponent: React.FC<InputCheckBoxProp> = ({
     onChange,
     type = "checkbox",
     label = "Check Box",
-    className = style.InputCheckBoxComponentStyle, 
+    labelClassName = style.labelCheckBoxComponentStyle,
+    inputClassName = style.InputCheckBoxComponentStyle,
 }) => {
     return (
-        <label className={className}>
+        <label className={labelClassName}>
             <input
                 type={type}
                 checked={checked}
                 aria-label={label}
                 onChange={onChange}
+                className={inputClassName}
             />
             {label}
         </label>
