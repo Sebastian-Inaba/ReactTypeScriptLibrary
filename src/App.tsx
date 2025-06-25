@@ -9,6 +9,7 @@ import {
     SelectDropdownComponent,
     ToggleSwitchComponent,
     BadgeComponent,
+    AvatarComponent
 } from './components/basic';
 
 // This is currently used as a playground for testing the components.
@@ -167,6 +168,11 @@ function App() {
             {/* Badge */}
             <section>
                 <h3>login status:</h3>
+            </section>
+
+            {/* Avatar */}
+            <section>
+                <h3>User avatar:</h3>
             </section>
         </div>
     );

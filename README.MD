@@ -22,6 +22,7 @@ To make this library easier to use and explore, I’m building a dedicated **Pre
 - Day 4: Created a check box input with TS, examples and use with other component.
 - Day 5-7: I missed 2 days so i created 3 components with TS, radio button, dropdown select and switch/toggle checkbox. With examples.
 - Day 8: Created a badge component with TS, there are examples but this can be used in many ways. I didn't test it in playground yet, so might not work well.
+- Day 9: Created a avatar component, this has also not yet been tested. I'll test day 8 & 9 tomorrow.
 - Planning to add more components in phases, gradually increasing complexity and interactivity, and eventually building the preview UI with them.
 
 ### Why This Project?
