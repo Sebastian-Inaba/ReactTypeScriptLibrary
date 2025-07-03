@@ -14,16 +14,11 @@ To make this library easier to use and explore, I’m building a dedicated **Pre
 - The Preview UI will use only the components within this library, no external UI dependencies or individual code(except maybe some html and css).
 - As this is a step-by-step project, the Preview UI will grow alongside the component library.
 
-### Current Progress
+### Current Progress Updates
 
-- Day 1: Created the first component a button with TypeScript support, props typing, and CSS modules styling.
-- Day 2: Created a input field component with TypeScript, with examples and a example on how you can use with the day 1 component.
-- Day 3: Created a text field component with TS, examples and use with other components.
-- Day 4: Created a check box input with TS, examples and use with other component.
-- Day 5-7: I missed 2 days so i created 3 components with TS, radio button, dropdown select and switch/toggle checkbox. With examples.
-- Day 8: Created a badge component with TS, there are examples but this can be used in many ways. I didn't test it in playground yet, so might not work well.
-- Day 9: Created a avatar component, this has also not yet been tested. I'll test day 8 & 9 tomorrow.
-- Planning to add more components in phases, gradually increasing complexity and interactivity, and eventually building the preview UI with them.
+- 3 new components added: tooltip, divider and progress bar.
+- The divider is very simple but in the tooltip and progressBar i have started using hooks, which will start to appear why more from now on.
+- I have also decided to change my update format from "day" to just components as "day" might not work in different situations.
 
 ### Why This Project?
 

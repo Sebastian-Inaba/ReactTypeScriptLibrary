@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import {
     ButtonComponent,
@@ -9,9 +9,11 @@ import {
     SelectDropdownComponent,
     ToggleSwitchComponent,
     BadgeComponent,
-    AvatarComponent
+    AvatarComponent,
+    ToolTipComponent,
+    DividerComponent,
+    ProgressBarComponent
 } from './components/basic';
-
 // This is currently used as a playground for testing the components.
 // It will be replaced with a more structured example in the future.
 
@@ -50,6 +52,22 @@ function App() {
         } else {
             alert(`Email: ${inputValueEmailFormExample}\nText: ${inputValueTextFormExample}`);
         }
+    };
+
+    const [progress, setProgress] = useState(0);
+
+    const handleStart = () => {
+        setProgress(0);
+        let current = 0;
+
+        const intervalId = setInterval(() => {
+        current += 10;
+        setProgress(current);
+
+        if (current >= 100) {
+            clearInterval(intervalId);
+        }
+        }, 300); 
     };
 
     return (
@@ -167,12 +185,58 @@ function App() {
 
             {/* Badge */}
             <section>
-                <h3>login status:</h3>
+                <h3>Badge Example</h3>
+                <BadgeComponent label="New!" icon="🔥" />
             </section>
-
+            
             {/* Avatar */}
             <section>
-                <h3>User avatar:</h3>
+                <h3>Avatar Examples</h3>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <AvatarComponent name="Anna Banana" size="small" />
+                    <AvatarComponent name="Jack Back" size="medium" />
+                    <AvatarComponent name="Bob" size="large" />
+                    <AvatarComponent src="/images/meyoung.jpg" alt="User Avatar" size="large" />
+                </div>
+            </section>
+
+            {/* ToolTip */}
+            <section>
+                <h3>Tooltip Example</h3>
+                <ToolTipComponent text="This is a tooltip!" position='relative'>
+                        <button>Hover me</button>
+                </ToolTipComponent>
+            </section>
+
+            {/* Divider */}
+            <section>
+                <h3>Divider Example</h3>
+                <p>Above divider</p>
+                <DividerComponent />
+                <p>Below divider</p>
+
+                <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                    <span>Left</span>
+                        <DividerComponent vertical />
+                    <span>Right</span>
+                </div>
+            </section>
+            
+            {/* Progress Bar */}
+            <section>
+                <h3>Interactive Progress Bar Example</h3>
+                {/* Button to kick off the progress */}
+                <ButtonComponent label="Start" onClick={handleStart} />
+
+                {/* The ProgressBarComponent will animate to `progress` */}
+                <ProgressBarComponent
+                progress={progress}
+                progressText="Downloading something maybe"
+                progressTextPosition="bottom"
+                percentagePosition="inside"
+                striped
+                animated
+                />
             </section>
         </div>
     );

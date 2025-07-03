@@ -48,8 +48,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
   max-width: 1300px;
-  margin: 0 auto;
+  margin: 20px auto;
   width: 100%;
+}
+
+.wrapper section {
+  margin: 50px;
 }

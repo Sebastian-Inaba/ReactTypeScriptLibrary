@@ -5,7 +5,7 @@ type AvatarSize = 'small' | 'medium' | 'large';
 
 type AvatarProps = {
     name?: string; // Optional name for the avatar, as a fallback or for the image
-    src: string;
+    src?: string;
     alt?: string;
     size?: AvatarSize;
     divClassName?: string; 
