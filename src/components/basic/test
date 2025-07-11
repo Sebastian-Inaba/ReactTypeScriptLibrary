@@ -1,0 +1,8 @@
+import { FaCheck } from "react-icons/fa";
+
+const TestIcon = () => {
+  const icon: JSX.Element = <FaCheck />; // Should not error
+  return <div>{icon}</div>;
+};
+
+export default TestIcon;

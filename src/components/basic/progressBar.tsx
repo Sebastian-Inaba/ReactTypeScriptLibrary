@@ -154,19 +154,13 @@ USAGE EXAMPLES:
 // 1. Simple progress bar with inside percentage text and animation
 // <ProgressBarComponent progress={75} animated />
 
-// 2. Progress bar with progress label above and percentage below the bar
-// <ProgressBarComponent progress={50} progressText="Loading..." progressTextPosition="top" percentagePosition="bottom" striped />
+// 2. Progress bar with progress label to the left and percentage to the right
+// <ProgressBarComponent progress={30} progressText="download something" progressTextPosition="left" percentagePosition="right" animated striped />
 
-// 3. Progress bar with progress label to the left and percentage to the right
-// <ProgressBarComponent progress={30} progressText="Step 1" progressTextPosition="left" percentagePosition="right" animated striped />
-
-// 4. Progress bar with progress text hidden and percentage shown outside on the right
+// 3. Progress bar with progress text hidden and percentage shown outside on the right
 // <ProgressBarComponent progress={90} percentagePosition="right" />
 
-// 5. Progress bar with no labels shown
-// <ProgressBarComponent progress={45} progressTextPosition="none" percentagePosition="none" />
-
-// 6. Progress bar with custom class names for styling
+// 4. Progress bar with custom class names for styling
 // <ProgressBarComponent
 //    progress={65}
 //    className="myProgressBarWrapper"
@@ -175,6 +169,110 @@ USAGE EXAMPLES:
 //    textClassName="myTextClass"
 //    striped
 //    animated
+// />
+
+// 5. Button Starts the progress animation with stripes onClick
+// 
+// const [progress, setProgress] = useState(0);
+// 
+// const handleProgressComponentStart = () => {
+//     setProgress(0);
+//     const duration = 10000; // 10 seconds
+//     const startTime = performance.now();
+// 
+//     const updateProgress = (currentTime: number) => {
+//         const elapsedTime = currentTime - startTime;
+//         const newProgress = Math.floor((elapsedTime / duration) * 100);
+//         setProgress(newProgress);
+// 
+//         if (newProgress < 100) {
+//             requestAnimationFrame(updateProgress);
+//         }
+//     };
+// 
+//     requestAnimationFrame(updateProgress);
+// };
+// 
+// <section>
+//     <h3>Interactive Progress Bar Example</h3>
+//     <ButtonComponent label="Start" onClick={handleProgressComponentStart} />
+// 
+//     <ProgressBarComponent
+//     progress={progress}
+//     progressText="Downloading something maybe"
+//     progressTextPosition="bottom"
+//     percentagePosition="inside"
+//     striped
+//     animated
+//     />
+// </section>
+
+// 6. Sync the progress bar to a real example with fetch(I have never tried this so i don't know how it works)
+// 
+// const [progress, setProgress] = useState(0);
+// 
+// const handleDownload = async (url: string, filename: string) => {
+//     setProgress(0); // Reset progress
+// 
+//     try {
+//         const response = await fetch(url);
+//         
+//         if (!response.ok) {
+//             throw new Error(`Failed to download: ${response.statusText}`);
+//         }
+// 
+//         const contentLength = response.headers.get("content-length");
+//         const totalBytes = contentLength ? parseInt(contentLength) : 0;
+// 
+//         const reader = response.body?.getReader();
+//         if (!reader) {
+//             throw new Error("No readable stream available");
+//         }
+// 
+//         let receivedBytes = 0;
+//         let chunks: Uint8Array[] = [];
+// 
+//         while (true) {
+//             const { done, value } = await reader.read();
+//             if (done) break;
+// 
+//             chunks.push(value);
+//             receivedBytes += value.length;
+// 
+//             // Update progress (if totalBytes is known)
+//             if (totalBytes > 0) {
+//                 const newProgress = Math.round((receivedBytes / totalBytes) * 100);
+//                 setProgress(newProgress);
+//             }
+//         }
+// 
+//         const blob = new Blob(chunks);
+//         const downloadUrl = window.URL.createObjectURL(blob);
+//         const link = document.createElement("a");
+//         link.href = downloadUrl;
+//         link.download = filename;
+//         link.click();
+// 
+//         // Clean up
+//         window.URL.revokeObjectURL(downloadUrl);
+//         setProgress(100); // Ensure 100% at the end
+//     } catch (error) {
+//         console.error("Download failed:", error);
+//         setProgress(0); // Reset on error
+//     }
+// };
+// 
+// <ButtonComponent 
+//     label="Download File" 
+//     onClick={() => handleDownload("https://example.com/file.zip", "file.zip")} 
+// />
+// <ProgressBarComponent
+//     progress={progress}
+//     progressText="Downloading file.zip"
+//     progressTextPosition="bottom"
+//     percentagePosition="inside"
+//     striped
+//     animated
 // />
 
 */

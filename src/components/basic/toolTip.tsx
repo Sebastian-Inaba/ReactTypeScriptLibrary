@@ -38,7 +38,6 @@ const ToolTipComponent: React.FC<ToolTipProps> = ({
     const [isVisible, setIsVisible] = useState(false); // This is a react state hook, it sets and updates the stat of the tooltip visibility.
     const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null); // this is a state hook to manage the timeout, for showing/hiding the tooltip.
                                                                             // NodeJS.Timeout is used to set and update a id for the current timeout.
-
     // This is the mouse enter and leave event handlers for the tooltip.
     // When the mouse enters the DOM element, it removes any existing timeout and sets a new one to "SHOW" the tooltip after the specified delay.
     // When the mouse leaves the DOM element, it removes any existing timeout and sets a new one to "HIDE" the tooltip after the specified delay.

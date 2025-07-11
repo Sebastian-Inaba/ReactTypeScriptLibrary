@@ -54,7 +54,7 @@ export default AvatarComponent
 
 /*
 
-USAGE CONTEXT EXAMPLES:
+USAGE EXAMPLES:
 
 // Note: Not for practical use, but to show how the AvatarComponent can be used.
 
