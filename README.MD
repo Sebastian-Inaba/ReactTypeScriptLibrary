@@ -16,12 +16,7 @@ To make this library easier to use and explore, I’m going to building a dedica
 
 ### Current Progress Updates
 
-- 3 new components added: alertNotification, popup and card.
-- There were a dependencies problem with react icons inside alertNotifications so i had to manually declare the icons in a new .d.ts file to make them work, nothing else i tried worked
-    - I tried changing dependencies versions 
-    - declare in component in JSX.React, React.Node, React.Element, React.JSX.Element. 
-    - I tried some other things to but i don't remember 
-- Playground is also setup with routing for card component and other future use
+- Made 2 components(accordion, tabs), will add css and test them, maybe change code to look more neat. Keyboard nav might not be needed. Also getting lazy with comments might not make as many anymore. Tho use examples are fun to do so will still do that later. 
 
 ### Why This Project?
 
