@@ -1,0 +1,46 @@
+/* -------------------- selectDropdownComponent -------------------- */
+.SelectDropdownComponentLabel {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.SelectDropdownComponentSpan {
+    font-weight: 500;
+    padding-left: 4px;
+}
+
+.SelectDropdownComponentSelect {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    appearance: none;
+    /* 
+  Custom dropdown arrow icon added as an inline SVG background image.
+  This replaces the native arrow which is hidden by 'appearance: none'.
+  SVG is embedded as a data URI for better performance and scalability.
+  (Generated with the help of AI)
+  */
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='10' viewBox='0 0 14 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%23333' stroke-width='2' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px;
+}
+
+.SelectDropdownComponentSelect:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}

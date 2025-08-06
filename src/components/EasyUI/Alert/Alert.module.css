@@ -1,0 +1,198 @@
+/* -------------------- AlertComponent -------------------- */
+.AlertComponentWrapper {
+    width: 300px;
+    background: white;
+    border-radius: 2px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-left: 4px solid #2196f3;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 10px;
+}
+
+/* Position Styles */
+.AlertComponentTopRightPosition {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.AlertComponentBottomRightPosition {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.AlertComponentTopLeftPosition {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+.AlertComponentBottomLeftPosition {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+.AlertComponentCenterPosition {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.AlertComponentTopCenterPosition {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.AlertComponentBottomCenterPosition {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Header Styles */
+.AlertComponentHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: #f8f8f8;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.AlertComponentTitleContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.AlertComponentTitle {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.AlertComponentCloseButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    font-size: 14px;
+    padding: 4px;
+}
+
+.AlertComponentCloseButton:hover {
+    color: #333;
+}
+
+/* Body Styles */
+.AlertComponentBody {
+    padding: 16px;
+}
+
+.AlertComponentMessage {
+    margin: 0;
+    font-size: 13px;
+    color: #333;
+    line-height: 1.4;
+}
+
+/* Footer Styles */
+.AlertComponentFooter {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 12px 16px;
+    background: #f8f8f8;
+    border-top: 1px solid #e5e5e5;
+}
+
+.AlertComponentOkButton {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    background: #f0f0f0;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.AlertComponentOkButton:hover {
+    background: #e5e5e5;
+}
+
+.AlertComponentActionButton {
+    padding: 6px 12px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-right: auto;
+}
+
+/* Icon Styles */
+.AlertComponentIconSuccess {
+    color: #4caf50;
+    font-size: 16px;
+}
+
+.AlertComponentIconError {
+    color: #f44336;
+    font-size: 16px;
+}
+
+.AlertComponentIconWarning {
+    color: #ff9800;
+    font-size: 16px;
+}
+
+.AlertComponentIconInfo {
+    color: #2196f3;
+    font-size: 16px;
+}
+
+/* Type-specific Styles */
+.AlertComponentWrapper.AlertComponentTypeSuccess {
+    border-left-color: #4caf50;
+}
+
+.AlertComponentWrapper.AlertComponentTypeError {
+    border-left-color: #f44336;
+}
+
+.AlertComponentWrapper.AlertComponentTypeWarning {
+    border-left-color: #ff9800;
+}
+
+.AlertComponentWrapper.AlertComponentTypeInfo {
+    border-left-color: #2196f3;
+}
+
+.AlertComponentActionButtonSuccess {
+    border: 1px solid #4caf50;
+    color: #4caf50;
+    background: rgba(76, 175, 80, 0.1);
+}
+
+.AlertComponentActionButtonError {
+    border: 1px solid #f44336;
+    color: #f44336;
+    background: rgba(244, 67, 54, 0.1);
+}
+
+.AlertComponentActionButtonWarning {
+    border: 1px solid #ff9800;
+    color: #ff9800;
+    background: rgba(255, 152, 0, 0.1);
+}
+
+.AlertComponentActionButtonInfo {
+    border: 1px solid #2196f3;
+    color: #2196f3;
+    background: rgba(33, 150, 243, 0.1);
+}

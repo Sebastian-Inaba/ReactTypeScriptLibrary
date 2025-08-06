@@ -1,0 +1,21 @@
+/* -------------------- dividerComponent -------------------- */
+.DividerComponentDiv {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.DividerComponentHorizontalPosition {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    margin: 1rem 0;
+}
+
+.DividerComponentVerticalPosition {
+    width: 1px;
+    align-self: stretch;
+    background-color: #ccc;
+    margin: 0 1rem;
+}

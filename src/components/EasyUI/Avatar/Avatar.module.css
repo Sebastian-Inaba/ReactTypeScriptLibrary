@@ -1,0 +1,44 @@
+/* -------------------- AvatarComponent -------------------- */
+.AvatarComponentDiv {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #e0e0e0;
+    color: #333;
+    font-weight: 600;
+    text-transform: uppercase;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+.AvatarComponentImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.AvatarComponentSpan {
+    line-height: 1;
+    font-size: 16px;
+}
+
+.avatarSmall {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+}
+
+.avatarMedium {
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+}
+
+.avatarLarge {
+    width: 64px;
+    height: 64px;
+    font-size: 20px;
+}

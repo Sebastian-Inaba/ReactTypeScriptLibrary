@@ -1,0 +1,126 @@
+/* -------------------- CardComponent -------------------- */
+.cardComponent {
+    --card-bg: #ffffff;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --card-radius: 12px;
+    --card-padding: 16px;
+    --card-gap: 12px;
+    --card-border: 1px solid #e5e7eb;
+
+    background: var(--card-bg);
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    border: var(--card-border);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.cardComponent:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.cardComponentLink {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.cardComponentHeader {
+    position: relative;
+    padding-top: 56.25%;
+    overflow: hidden;
+}
+
+.cardComponentImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.cardComponent:hover .cardComponentImage {
+    transform: scale(1.03);
+}
+
+.cardComponentContent {
+    padding: var(--card-padding);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--card-gap);
+}
+
+.cardComponentTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    color: #1f2937;
+}
+
+.cardComponentMessage {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.cardComponentFooter {
+    padding: 0 var(--card-padding) var(--card-padding);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--card-gap);
+}
+
+.cardComponentTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.cardComponentTag {
+    background: #f3f4f6;
+    color: #4b5563;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.cardComponentActionButton {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    align-self: flex-start;
+}
+
+.cardComponentActionButton:hover {
+    background: #2563eb;
+}
+
+@media (max-width: 768px) {
+    .cardComponent {
+        --card-padding: 12px;
+        --card-gap: 8px;
+    }
+
+    .cardComponentTitle {
+        font-size: 1.1rem;
+    }
+}

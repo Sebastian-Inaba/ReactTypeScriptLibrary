@@ -1,0 +1,56 @@
+/* -------------------- toolTipComponent -------------------- */
+.ToolTipComponentDivWrapper {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.ToolTipComponentDiv {
+    position: absolute;
+    z-index: 999;
+}
+
+.ToolTipComponentSpan {
+    background-color: #333;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.ToolTipComponentDivWrapper:hover .ToolTipComponentSpan {
+    opacity: 1;
+}
+
+.ToolTipComponentTopRightPosition {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+.ToolTipComponentBottomRightPosition {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.ToolTipComponentTopLeftPosition {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+.ToolTipComponentBottomLeftPosition {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+}
+
+.ToolTipComponentRelativePosition {
+    top: -35px;
+    left: 0;
+}
