@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import style from './basic.module.css';
+import style from './ToastNotification.module.css';
 
-// toast notification component, displays message for set time
+// toast notification component
 
 //WIP
 
@@ -10,7 +10,7 @@ interface ToastNotificationProps {
     duration: number;
     onTrigger?: () => void;
     className?: string;
-    icon?: React.ReactNode; // Might not be best to use react node, but its flexible and works for now
+    icon?: React.ReactNode;
 }
 
 export const ToastNotificationComponent: React.FC<ToastNotificationProps> = ({

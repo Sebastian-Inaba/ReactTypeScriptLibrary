@@ -17,6 +17,7 @@ import {
     AlertComponent,
     CardComponent,
     ModalComponent,
+    AccordionComponent,
 } from './components/index';
 
 // This is currently used as a playground for testing the components.
@@ -85,24 +86,16 @@ function App() {
                             {/* Button: components/EasyUI/Button/Button.tsx*/}
                             <section>
                                 <h3>Simple Button Example:</h3>
-                                <ButtonComponent
-                                    label="Im A Button"
-                                    onClick={() => alert('You Clicked Me!')}
-                                />
+                                <ButtonComponent label="Im A Button" onClick={() => alert('You Clicked Me!')} />
                             </section>
 
                             {/* Button + InputField: components/EasyUI/Button/Button.tsx | components/EasyUI/InputField/InputField.tsx*/}
                             <section>
                                 <h3>Button and Input Field Example:</h3>
-                                <ButtonComponent
-                                    label="Im A Button for the Input"
-                                    onClick={handleButtonInputExample}
-                                />
+                                <ButtonComponent label="Im A Button for the Input" onClick={handleButtonInputExample} />
                                 <InputFieldComponent
                                     value={inputValueButtonInputExample}
-                                    onChange={(e) =>
-                                        setInputValueButtonInputExample(e.target.value)
-                                    }
+                                    onChange={(e) => setInputValueButtonInputExample(e.target.value)}
                                     type="text"
                                     placeholder="Write text here"
                                 />
@@ -111,22 +104,14 @@ function App() {
                             {/* Button + InputField + TextArea: components/EasyUI/Button/Button.tsx | components/EasyUI/InputField/InputField.tsx | components/EasyUI/TextArea/TextArea.tsx */}
                             <section>
                                 <h3>Email and Text Area Form Example:</h3>
-                                <ButtonComponent
-                                    label="Im A Button for the TextArea"
-                                    onClick={handleEmailFormExample}
-                                    type="submit"
-                                />
+                                <ButtonComponent label="Im A Button for the TextArea" onClick={handleEmailFormExample} type="submit" />
                                 <InputFieldComponent
                                     value={inputValueEmailFormExample}
                                     onChange={(e) => setInputValueEmailFormExample(e.target.value)}
                                     type="email"
                                     placeholder="Enter your email"
                                     label="Email input"
-                                    className={
-                                        inputValueEmailFormExample.includes('@')
-                                            ? 'valid'
-                                            : 'invalid'
-                                    }
+                                    className={inputValueEmailFormExample.includes('@') ? 'valid' : 'invalid'}
                                 />
                                 <TextAreaComponent
                                     value={inputValueTextFormExample}
@@ -222,11 +207,7 @@ function App() {
                                     <AvatarComponent name="Anna Banana" size="small" />
                                     <AvatarComponent name="Jack Back" size="medium" />
                                     <AvatarComponent name="Bob" size="large" />
-                                    <AvatarComponent
-                                        src="/images/meyoung.jpg"
-                                        alt="User Avatar"
-                                        size="large"
-                                    />
+                                    <AvatarComponent src="/images/meyoung.jpg" alt="User Avatar" size="large" />
                                 </div>
                             </section>
 
@@ -256,10 +237,7 @@ function App() {
                             <section>
                                 <h3>Interactive Progress Bar Example</h3>
                                 {/* Button to kick off the progress */}
-                                <ButtonComponent
-                                    label="Start"
-                                    onClick={handleProgressComponentStart}
-                                />
+                                <ButtonComponent label="Start" onClick={handleProgressComponentStart} />
 
                                 {/* The ProgressBarComponent will animate to `progress` */}
                                 <ProgressBarComponent
@@ -275,10 +253,7 @@ function App() {
                             {/* Alert + Button: components/EasyUI/Button/Button.tsx | components/EasyUI/Alert/Alert.tsx */}
                             <section>
                                 <h3>Alert Example</h3>
-                                <ButtonComponent
-                                    label="Show Alert"
-                                    onClick={() => setShowAlert(true)}
-                                />
+                                <ButtonComponent label="Show Alert" onClick={() => setShowAlert(true)} />
 
                                 {showAlert && (
                                     <AlertComponent
@@ -330,6 +305,27 @@ function App() {
                         </div>
                         <div className="NormalUIWrapper">
                             <h1>Normal UI Components</h1>
+
+                            {/* Accordion + Button: components/EasyUI/Button/Button.tsx | components/NormalUI/Accordion/Accordion.tsx */}
+                            <section>
+                                <h3>Accordion Example {`(Very ugly)`}</h3>
+                                <AccordionComponent
+                                    title="What is your return policy?"
+                                    content={
+                                        <>
+                                            <p>You can return any item within 30 days of purchase.</p>
+                                            <ButtonComponent label="More Info" type="button" onClick={() => alert('I do nothing')} />
+                                        </>
+                                    }
+                                    isOpen={false}
+                                    onToggle={(isOpen) => console.log('Accordion toggled:', isOpen)}
+                                    className="CustomAccordionClass" // Only wrapper have this class so cant style content or header, here.
+                                    icon={<span>🔍</span>}
+                                />
+                            </section>
+
+                            {/* Tabs: components/EasyUI/Tabs/Tabs.tsx */}
+                            <section></section>
                         </div>
                     </div>
                 }

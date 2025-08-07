@@ -18,15 +18,7 @@ export const TextAreaComponent: React.FC<TextAreaProp> = ({
     label = 'Text Area',
     className = style.TextAreaComponentStyle,
 }) => {
-    return (
-        <textarea
-            className={className}
-            value={value}
-            placeholder={placeholder}
-            aria-label={label}
-            onChange={onChange}
-        />
-    );
+    return <textarea className={className} value={value} placeholder={placeholder} aria-label={label} onChange={onChange} />;
 };
 
 /*

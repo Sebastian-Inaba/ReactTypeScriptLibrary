@@ -44,12 +44,7 @@ export const CardComponent: React.FC<CardProps> = ({
     const cardContent = (
         <>
             <div className={style.cardComponentHeader}>
-                <img
-                    src={src}
-                    alt={cardAlt}
-                    className={style.cardComponentImage}
-                    onError={fallBackSrc ? handleImageError : undefined}
-                />
+                <img src={src} alt={cardAlt} className={style.cardComponentImage} onError={fallBackSrc ? handleImageError : undefined} />
             </div>
             <div className={style.cardComponentContent}>
                 <h3 className={style.cardComponentTitle}>{title}</h3>
@@ -57,10 +52,7 @@ export const CardComponent: React.FC<CardProps> = ({
             </div>
             <div className={style.cardComponentFooter}>
                 {clickType.type === 'action' && (
-                    <button
-                        className={style.cardComponentActionButton}
-                        onClick={clickType.onAction}
-                    >
+                    <button className={style.cardComponentActionButton} onClick={clickType.onAction}>
                         {clickType.actionLabel}
                     </button>
                 )}
@@ -81,11 +73,7 @@ export const CardComponent: React.FC<CardProps> = ({
     return (
         <div className={`${style.cardComponent} ${className}`}>
             {clickType.type === 'link' ? (
-                <Link
-                    to={clickType.to}
-                    className={style.cardComponentLink}
-                    aria-label={title ? `View ${title}` : 'View card details'}
-                >
+                <Link to={clickType.to} className={style.cardComponentLink} aria-label={title ? `View ${title}` : 'View card details'}>
                     {cardContent}
                 </Link>
             ) : (

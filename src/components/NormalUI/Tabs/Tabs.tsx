@@ -1,25 +1,27 @@
 import React, { useState, useEffect, useId } from 'react';
-import style from './basic.module.css';
+import style from './Tabs.module.css';
+
+// Tabs component
 
 interface TabsProps {
     tabs: { label: string; content: React.ReactNode; disabled?: boolean }[];
     activeTab?: number;
     onTabChange?: (index: number) => void;
-    className?: string;
-    tabClassName?: string;
-    contentClassName?: string;
-    headerContainerClassName?: string;
+    TabsComponentWrapperCustom?: string;
+    TabsComponentHeaderCustom?: string;
+    TabsComponentContentCustom?: string;
+    TabsComponentHeaderGroupCustom?: string;
     orientation?: 'horizontal' | 'vertical';
 }
 
-const Tabs: React.FC<TabsProps> = ({
+export const TabsComponent: React.FC<TabsProps> = ({
     tabs,
     activeTab = 0,
     onTabChange,
-    className = '',
-    tabClassName = '',
-    contentClassName = '',
-    headerContainerClassName = '',
+    TabsComponentWrapperCustom = '',
+    TabsComponentHeaderCustom = '',
+    TabsComponentContentCustom = '',
+    TabsComponentHeaderGroupCustom = '',
     orientation = 'horizontal',
 }) => {
     const [ActiveTab, setActiveTab] = useState<number>(activeTab);
@@ -35,7 +37,6 @@ const Tabs: React.FC<TabsProps> = ({
         onTabChange?.(index);
     };
 
-    // Keyboard navigation support
     const handleKeyDown = (e: React.KeyboardEvent, index: number) => {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
@@ -59,11 +60,15 @@ const Tabs: React.FC<TabsProps> = ({
 
     return (
         <div
-            className={`${style.tabs} ${orientation === 'vertical' ? style.vertical : ''} ${className}`}
-            role="tablist"
-            aria-orientation={orientation}
+            className={`
+                    ${style.TabsComponentWrapper} 
+                    ${orientation === 'vertical' ? style.TabsComponentVertical : ''}   
+                    ${TabsComponentWrapperCustom}
+                `}
+                role="tablist"
+                aria-orientation={orientation}
         >
-            <div className={`${style.tabHeaders} ${headerContainerClassName}`}>
+            <div className={`${style.TabsComponentHeaderGroup} ${TabsComponentHeaderGroupCustom}`}>
                 {tabs.map((tab, index) => {
                     const isActive = ActiveTab === index;
                     const tabId = `${idPrefix}-tab-${index}`;
@@ -78,9 +83,9 @@ const Tabs: React.FC<TabsProps> = ({
                             aria-selected={isActive}
                             aria-controls={panelId}
                             aria-disabled={tab.disabled || false}
-                            className={`${style.tabHeader} ${tabClassName} ${
-                                isActive ? style.active : ''
-                            } ${tab.disabled ? style.disabled : ''}`}
+                            className={`${style.TabsComponentHeader} ${TabsComponentHeaderCustom} ${
+                                isActive ? style.TabsComponentActive : ''
+                            } ${tab.disabled ? style.TabsComponentDisabled : ''}`}
                             onClick={() => handleTabChange(index)}
                             onKeyDown={(e) => handleKeyDown(e, index)}
                         >
@@ -93,7 +98,7 @@ const Tabs: React.FC<TabsProps> = ({
                 id={`${idPrefix}-panel-${ActiveTab}`}
                 role="tabpanel"
                 aria-labelledby={`${idPrefix}-tab-${ActiveTab}`}
-                className={`${style.tabContent} ${contentClassName}`}
+                className={`${style.TabsComponentContent} ${TabsComponentContentCustom}`}
                 tabIndex={0}
             >
                 {tabs[ActiveTab]?.content}
@@ -101,8 +106,6 @@ const Tabs: React.FC<TabsProps> = ({
         </div>
     );
 };
-
-export default Tabs;
 
 /*
 

@@ -10,12 +10,7 @@ interface ToggleSwitchProp {
     className?: string;
 }
 
-export const ToggleSwitchComponent: React.FC<ToggleSwitchProp> = ({
-    checked,
-    onChange,
-    label = 'Switch',
-    className = '',
-}) => {
+export const ToggleSwitchComponent: React.FC<ToggleSwitchProp> = ({ checked, onChange, label = 'Switch', className = '' }) => {
     return (
         <label className={`${style.ToggleSwitchComponentLabel} ${className}`}>
             {/* Hidden checkbox input controlling the toggle state */}

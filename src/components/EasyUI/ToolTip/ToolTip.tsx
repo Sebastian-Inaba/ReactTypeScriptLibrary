@@ -14,13 +14,7 @@ interface ToolTipProps {
     className?: string;
 }
 
-export const ToolTipComponent: React.FC<ToolTipProps> = ({
-    text,
-    position = 'relative',
-    children,
-    delay = 0,
-    className = '',
-}) => {
+export const ToolTipComponent: React.FC<ToolTipProps> = ({ text, position = 'relative', children, delay = 0, className = '' }) => {
     const [isVisible, setIsVisible] = useState(false);
     const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
 
@@ -83,11 +77,7 @@ export const ToolTipComponent: React.FC<ToolTipProps> = ({
     }, [timeoutId]);
 
     return (
-        <div
-            className={`${className} ${style.ToolTipComponentDivWrapper}`}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-        >
+        <div className={`${className} ${style.ToolTipComponentDivWrapper}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             {/* Child element */}
             {children}
 

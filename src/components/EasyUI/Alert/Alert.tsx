@@ -9,14 +9,7 @@ import { FaCheck, FaExclamationTriangle, FaInfoCircle, FaTimes } from 'react-ico
 // I tried to solve this problem with looking for answers on github and stack overflow but nothing worked
 
 type AlertType = 'success' | 'error' | 'warning' | 'info';
-type Position =
-    | 'topRight'
-    | 'bottomRight'
-    | 'topLeft'
-    | 'bottomLeft'
-    | 'center'
-    | 'topCenter'
-    | 'bottomCenter';
+type Position = 'topRight' | 'bottomRight' | 'topLeft' | 'bottomLeft' | 'center' | 'topCenter' | 'bottomCenter';
 
 interface AlertProps {
     type: AlertType;

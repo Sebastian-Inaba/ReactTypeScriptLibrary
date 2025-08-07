@@ -17,9 +17,9 @@ To make this library easier to use and explore, I’m going to building a dedica
 
 ### Current Progress Updates
 
-- Reorganized the workspace
-- Changed or removed comments
+- Reorganized the workspace again
 - Used prettier for code layout(if something looks weird)
+- Next gonna fix Tabs example usage and then fix Toast component
 
 ### Why This Project?
 

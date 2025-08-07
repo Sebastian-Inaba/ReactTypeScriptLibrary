@@ -42,8 +42,11 @@
     }
 }
 
+body {
+    background-color: #303030;
+}
+
 .wrapper {
-    background-color: #aaaaaa;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,5 +63,17 @@
 
 .EasyUIWrapper {
     margin-bottom: 50px;
+    padding: 20px;
     border: solid 2px #000;
+    max-width: 1300px;
+    width: 100%;
+    background-color: #aaaaaa;
+}
+.NormalUIWrapper {
+    margin-bottom: 50px;
+    padding: 20px;
+    border: solid 2px #000;
+    max-width: 1300px;
+    width: 100%;
+    background-color: #aaaaaa;
 }

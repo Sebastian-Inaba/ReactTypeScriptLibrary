@@ -1,0 +1,66 @@
+/* -------------------- AccordionComponent -------------------- */
+.AccordionComponentWrapper {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin: 8px 0;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+.AccordionComponentHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #e2e2e2;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.AccordionComponentHeader:hover {
+    background-color: #d6d6d6;
+}
+
+.AccordionComponentHeaderContent {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.AccordionComponentIcon {
+    font-size: 18px;
+}
+
+.AccordionComponentTitle {
+    font-size: 16px;
+}
+
+.AccordionComponentToggleIcon {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.AccordionComponentContent {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 16px;
+    transition:
+        max-height 0.3s ease,
+        padding 0.3s ease;
+    background-color: #fff;
+}
+
+.AccordionComponentShow {
+    padding: 12px 16px;
+    max-height: 500px; /* Adjust if needed */
+}
+
+.AccordionComponentHide {
+    max-height: 0;
+    padding: 0 16px;
+}

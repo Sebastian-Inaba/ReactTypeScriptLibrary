@@ -20,16 +20,7 @@ export const InputFieldComponent: React.FC<InputFieldProp> = ({
     label = 'Input Field',
     className = style.InputFieldComponentStyle,
 }) => {
-    return (
-        <input
-            className={className}
-            type={type}
-            value={value}
-            placeholder={placeholder}
-            aria-label={label}
-            onChange={onChange}
-        />
-    );
+    return <input className={className} type={type} value={value} placeholder={placeholder} aria-label={label} onChange={onChange} />;
 };
 
 /*

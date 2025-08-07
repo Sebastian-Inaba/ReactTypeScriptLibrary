@@ -10,14 +10,7 @@ interface RadioButtonProp {
     checked?: boolean;
 }
 
-export const RadioButtonComponent: React.FC<RadioButtonProp> = ({
-    name,
-    value,
-    onChange,
-    label,
-    className = '',
-    checked,
-}) => {
+export const RadioButtonComponent: React.FC<RadioButtonProp> = ({ name, value, onChange, label, className = '', checked }) => {
     return (
         <label className={`${style.RadioButtonComponentLabel} ${className}`}>
             <input
@@ -29,8 +22,7 @@ export const RadioButtonComponent: React.FC<RadioButtonProp> = ({
                 className={`${style.RadioButtonComponentInput} ${className}`}
                 aria-label={label}
             />
-            {label ?? value}{' '}
-            {/*label and value, if there is a label, display it, if not display value*/}
+            {label ?? value} {/*label and value, if there is a label, display it, if not display value*/}
         </label>
     );
 };

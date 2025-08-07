@@ -19,13 +19,7 @@ export const ButtonComponent: React.FC<ButtonProp> = ({
     className = style.ButtonComponentStyle,
 }) => {
     return (
-        <button
-            className={className}
-            onClick={onClick}
-            disabled={disabled}
-            type={type}
-            aria-label={label}
-        >
+        <button className={className} onClick={onClick} disabled={disabled} type={type} aria-label={label}>
             {label}
         </button>
     );

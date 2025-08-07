@@ -54,9 +54,7 @@ export const ProgressBarComponent: React.FC<ProgressBarProps> = ({
         .join(' '); // Join class names with a space
 
     // Render the text with the appropriate class
-    const renderText = (text: string) => (
-        <span className={style.ProgressBarComponentText}>{text}</span>
-    );
+    const renderText = (text: string) => <span className={style.ProgressBarComponentText}>{text}</span>;
 
     // Positioning with react DOM, this is a bit cluttered so using react Record or switch might be better
     return (
@@ -85,16 +83,8 @@ export const ProgressBarComponent: React.FC<ProgressBarProps> = ({
                     aria-label={progressText || `Progress: ${percentageText}`}
                 >
                     <div className={progressFillClass} style={{ width: `${currentProgress}%` }} />
-                    {percentagePosition === 'inside' && (
-                        <span className={style.ProgressBarComponentCenteredText}>
-                            {percentageText}
-                        </span>
-                    )}
-                    {progressTextPosition === 'inside' && (
-                        <span className={style.ProgressBarComponentCenteredText}>
-                            {progressText}
-                        </span>
-                    )}
+                    {percentagePosition === 'inside' && <span className={style.ProgressBarComponentCenteredText}>{percentageText}</span>}
+                    {progressTextPosition === 'inside' && <span className={style.ProgressBarComponentCenteredText}>{progressText}</span>}
                 </div>
 
                 {(progressTextPosition === 'right' || percentagePosition === 'right') && (

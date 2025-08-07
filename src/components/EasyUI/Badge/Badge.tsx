@@ -12,9 +12,7 @@ type BadgeProp = {
 export const BadgeComponent: React.FC<BadgeProp> = ({ label, icon, className = '' }) => {
     return (
         <div className={`${style.SelectDropdownComponentDiv} ${className}`}>
-            {icon && (
-                <span className={`${style.SelectDropdownComponentIcon} ${className}`}>{icon}</span>
-            )}
+            {icon && <span className={`${style.SelectDropdownComponentIcon} ${className}`}>{icon}</span>}
             <span className={`${style.SelectDropdownComponentSpan} ${className}`}>{label}</span>
         </div>
     );
