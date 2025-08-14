@@ -18,6 +18,8 @@ import {
     CardComponent,
     ModalComponent,
     AccordionComponent,
+    TabsComponent,
+    ToastNotificationComponent,
 } from './components/index';
 
 // This is currently used as a playground for testing the components.
@@ -37,6 +39,7 @@ function App() {
     const [showAlert, setShowAlert] = useState(false);
     const [progress, setProgress] = useState(0);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [showToast, setShowToast] = useState(false);
 
     // Handlers
     const handleButtonInputExample = () => {
@@ -324,8 +327,34 @@ function App() {
                                 />
                             </section>
 
-                            {/* Tabs: components/EasyUI/Tabs/Tabs.tsx */}
-                            <section></section>
+                            {/* Tabs + Button: components/EasyUI/Button/Button.tsx | components/NormalUI/Tabs/Tabs.tsx */}
+                            <section>
+                                <h3>Tabs Example</h3>
+                                <TabsComponent
+                                    tabs={[
+                                        {label: 'Profile A', content: <><p>Hello World</p> <ButtonComponent label='Button A' type='submit' onClick={() => alert('Button A')}/> </>},
+                                        {label: 'Profile B', content: <ButtonComponent label='Button B' type='submit' onClick={() => alert('Button B')} />},
+                                        {label: 'Profile C', content: <ButtonComponent label='Button C' type='submit' onClick={() => alert('Button C')} />},
+                                    ]}
+                                    orientation='horizontal'
+                                />
+                            </section>
+
+                            {/* ToastNotification + Button: components/EasyUI/Button/Button.tsx | components/NormalUI/ToastNotification/ToastNotification.tsx */}
+                            <section>
+                                <h3>Toast Notification Example</h3>
+                                <ButtonComponent
+                                    label="Show Toast"
+                                    onClick={() => setShowToast(true)}
+                                />
+                                {showToast && (
+                                    <ToastNotificationComponent
+                                        duration={2}   
+                                        message="Hello, I'm a ToastNotification!"
+                                        onClick={() => setShowToast(false)} 
+                                    />
+                                )}
+                            </section>
                         </div>
                     </div>
                 }

@@ -17,9 +17,9 @@ To make this library easier to use and explore, I’m going to building a dedica
 
 ### Current Progress Updates
 
-- Reorganized the workspace again
-- Used prettier for code layout(if something looks weird)
-- Next gonna fix Tabs example usage and then fix Toast component
+- Added use examples for tabs and example in playground
+- Added fixed the ToastNotification 
+- Set up for the next component Counter
 
 ### Why This Project?
 

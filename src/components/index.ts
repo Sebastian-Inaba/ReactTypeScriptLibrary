@@ -16,3 +16,5 @@ export { AlertComponent } from './EasyUI/Alert/Alert';
 export { CardComponent } from './EasyUI/Card/Card';
 export { ModalComponent } from './EasyUI/Modal/Modal';
 export { AccordionComponent } from './NormalUI/Accordion/Accordion';
+export { TabsComponent } from './NormalUI/Tabs/Tabs'
+export { ToastNotificationComponent } from './NormalUI/ToastNotification/ToastNotification';
