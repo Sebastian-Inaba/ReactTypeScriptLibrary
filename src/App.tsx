@@ -20,6 +20,8 @@ import {
     AccordionComponent,
     TabsComponent,
     ToastNotificationComponent,
+    CounterComponent,
+    StarRatingComponent,
 } from './components/index';
 
 // This is currently used as a playground for testing the components.
@@ -40,6 +42,7 @@ function App() {
     const [progress, setProgress] = useState(0);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [showToast, setShowToast] = useState(false);
+    const averageRating = 4.2;
 
     // Handlers
     const handleButtonInputExample = () => {
@@ -354,6 +357,19 @@ function App() {
                                         onClick={() => setShowToast(false)} 
                                     />
                                 )}
+                            </section>
+
+                            {/* Counter: components/NormalUI/Counter/Counter.tsx */}
+                            <section>
+                                <h3>Counter Example</h3>
+                                <CounterComponent/>
+                            </section>
+
+                            {/* StarRating: components/NormalUI/StarRating/StarRating.tsx */}
+                            <section>
+                                <h3>StarRating Example</h3>
+                                <StarRatingComponent disabled={false} />
+                                <StarRatingComponent starRating={Math.round(averageRating)} disabled={true} />
                             </section>
                         </div>
                     </div>

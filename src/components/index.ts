@@ -18,3 +18,5 @@ export { ModalComponent } from './EasyUI/Modal/Modal';
 export { AccordionComponent } from './NormalUI/Accordion/Accordion';
 export { TabsComponent } from './NormalUI/Tabs/Tabs'
 export { ToastNotificationComponent } from './NormalUI/ToastNotification/ToastNotification';
+export { CounterComponent } from './NormalUI/Counter/Counter';
+export { StarRatingComponent } from './NormalUI/StarRating/StarRating';

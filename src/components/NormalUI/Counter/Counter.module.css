@@ -1,1 +1,34 @@
 /* -------------------- CounterComponent -------------------- */
+.CounterComponentCounterUpButton,
+.CounterComponentCounterDownButton {
+  background-color: #4caf50; 
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.CounterComponentCounterUpButton:hover,
+.CounterComponentCounterDownButton:hover {
+  background-color: #45a049;
+}
+
+.CounterComponentSpan {
+  display: inline-block;
+  min-width: 40px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 8px;
+}
+
+.CounterComponentWrapperDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px; 
+}
