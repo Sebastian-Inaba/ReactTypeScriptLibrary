@@ -17,9 +17,8 @@ To make this library easier to use and explore, I’m going to building a dedica
 
 ### Current Progress Updates
 
-- Added use examples for tabs and example in playground
-- Added fixed the ToastNotification 
-- Set up for the next component Counter
+- Forgot to update last commit, mb.
+- Added 2 more components image carousel and password visibility 
 
 ### Why This Project?
 

@@ -1,0 +1,56 @@
+/* -------------------- ImageCarouselComponent -------------------- */
+.ImageCarouselComponentCarousel {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ImageCarouselComponentCarouselImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease-in-out;
+  object-fit: cover;
+}
+
+.controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 10px;
+  box-sizing: border-box;
+  pointer-events: none; 
+}
+
+.ImageCarouselComponentPrevButton,
+.ImageCarouselComponentNextButton {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: all; 
+  transition: background-color 0.2s;
+}
+
+.ImageCarouselComponentPrevButton:hover,
+.ImageCarouselComponentNextButton:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 480px) {
+  .ImageCarouselComponentPrevButton,
+  .ImageCarouselComponentNextButton {
+    font-size: 1.2rem;
+    padding: 0.4rem 0.6rem;
+  }
+}

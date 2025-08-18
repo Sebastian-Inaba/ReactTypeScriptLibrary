@@ -20,3 +20,5 @@ export { TabsComponent } from './NormalUI/Tabs/Tabs'
 export { ToastNotificationComponent } from './NormalUI/ToastNotification/ToastNotification';
 export { CounterComponent } from './NormalUI/Counter/Counter';
 export { StarRatingComponent } from './NormalUI/StarRating/StarRating';
+export { PasswordVisibilityComponent } from './NormalUI/PasswordVisibility/PasswordVisibility';
+export { ImageCarouselComponent } from './NormalUI/ImageCarousel/ImageCarousel';

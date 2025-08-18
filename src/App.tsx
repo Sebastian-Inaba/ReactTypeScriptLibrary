@@ -22,6 +22,8 @@ import {
     ToastNotificationComponent,
     CounterComponent,
     StarRatingComponent,
+    PasswordVisibilityComponent,
+    ImageCarouselComponent,
 } from './components/index';
 
 // This is currently used as a playground for testing the components.
@@ -42,7 +44,16 @@ function App() {
     const [progress, setProgress] = useState(0);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [showToast, setShowToast] = useState(false);
+
+    // Variables
     const averageRating = 4.2;
+    const catImages = [
+        'https://www.placecats.com/neo_banana/400/300',
+        'https://www.placecats.com/bella/400/300',
+        'https://www.placecats.com/neo_2/400/300',
+        'https://www.placecats.com/millie_neo/400/300',
+        'https://www.placecats.com/millie/400/300',
+    ];
 
     // Handlers
     const handleButtonInputExample = () => {
@@ -371,6 +382,34 @@ function App() {
                                 <StarRatingComponent disabled={false} />
                                 <StarRatingComponent starRating={Math.round(averageRating)} disabled={true} />
                             </section>
+                            
+                            {/* PasswordVisibility: components/NormalUI/PasswordVisibility/PasswordVisibility.tsx */}
+                            <section>
+                                <h3>PasswordVisibility Example</h3>
+                                <PasswordVisibilityComponent placeholder='Password...'/>
+                            </section>
+
+                            {/* ImageCarousel: components/NormalUI/ImageCarousel/ImageCarousel.tsx */}
+                            <section>
+                                <h2>Carousel Example</h2>
+                                <ImageCarouselComponent
+                                    images={catImages}
+                                    interval={2500} 
+                                />
+                            </section>
+
+                            {/* Component Type: components/NormalUI/path/path.tsx */}
+                            <section>
+                                <h3>Header Here</h3>
+
+                            </section>
+
+                            {/* Component Type: components/NormalUI/path/path.tsx */}
+                            <section>
+                                <h3>Header Here</h3>
+
+                            </section>
+                            
                         </div>
                     </div>
                 }
