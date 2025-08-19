@@ -24,6 +24,8 @@ import {
     StarRatingComponent,
     PasswordVisibilityComponent,
     ImageCarouselComponent,
+    StepUIComponent,
+    ValidationFormComponent,
 } from './components/index';
 
 // This is currently used as a playground for testing the components.
@@ -44,6 +46,8 @@ function App() {
     const [progress, setProgress] = useState(0);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [showToast, setShowToast] = useState(false);
+    const [showStepper, setShowStepper] = useState(false);
+    const [formData, setFormData] = useState({ name: "", email: "" });
 
     // Variables
     const averageRating = 4.2;
@@ -398,18 +402,85 @@ function App() {
                                 />
                             </section>
 
-                            {/* Component Type: components/NormalUI/path/path.tsx */}
+                            {/* StepUI: components/NormalUI/StepUI/StepUI.tsx */}
                             <section>
-                                <h3>Header Here</h3>
+                                <h3>StepUI example</h3>
+                                <div>
+                                    <button onClick={() => setShowStepper(true)}>Open Stepper</button>
 
+                                    {showStepper && (
+                                        <StepUIComponent
+                                        currentStep={0}
+                                        steps={[
+                                            <div>
+                                                <input
+                                                    type="text"
+                                                    placeholder="Name"
+                                                    value={formData.name}
+                                                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                                    style={{ width: "100%", padding: "8px" }}
+                                                    required
+                                                />
+                                            </div>,
+                                            <div>
+                                                <input
+                                                    type="email"
+                                                    placeholder="Email"
+                                                    value={formData.email}
+                                                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                                    style={{ width: "100%", padding: "8px" }}
+                                                    required
+                                                />
+                                            </div>,
+                                            <div>
+                                                <strong>Review:</strong>
+                                                <p>Name: {formData.name}</p>
+                                                <p>Email: {formData.email}</p>
+                                            </div>,
+                                        ]}
+                                        onCancel={() => {
+                                            setFormData({ name: "", email: "" });
+                                            setShowStepper(false);
+                                        }}
+                                        onComplete={() => {
+                                            console.log("Form submitted:", formData);
+                                            setShowStepper(false);
+                                        }}
+                                        />
+                                    )}
+                                </div>
                             </section>
 
-                            {/* Component Type: components/NormalUI/path/path.tsx */}
+                            {/* Validation Form: components/NormalUI/ValidationForm/ValidationForm.tsx */}
                             <section>
-                                <h3>Header Here</h3>
-
+                                <h3>Validation Form example</h3>
+                                    <ValidationFormComponent
+                                        onSubmit={(data) => {
+                                            console.log('Form submitted:', data);
+                                        }}
+                                        onCancel={() => {
+                                            console.log('Form cancelled');
+                                        }}      
+                                    />
                             </section>
                             
+                            {/* Component Type: components/NormalUI/path/path.tsx */}
+                            <section>
+                                <h3>Header Here</h3>
+
+                            </section>
+
+                            {/* Component Type: components/NormalUI/path/path.tsx */}
+                            <section>
+                                <h3>Header Here</h3>
+
+                            </section>
+
+                            {/* Component Type: components/NormalUI/path/path.tsx */}
+                            <section>
+                                <h3>Header Here</h3>
+
+                            </section>
                         </div>
                     </div>
                 }

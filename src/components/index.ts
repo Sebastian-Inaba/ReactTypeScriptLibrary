@@ -22,3 +22,5 @@ export { CounterComponent } from './NormalUI/Counter/Counter';
 export { StarRatingComponent } from './NormalUI/StarRating/StarRating';
 export { PasswordVisibilityComponent } from './NormalUI/PasswordVisibility/PasswordVisibility';
 export { ImageCarouselComponent } from './NormalUI/ImageCarousel/ImageCarousel';
+export { StepUIComponent } from './NormalUI/StepUI/StepUI';
+export { ValidationFormComponent } from './NormalUI/ValidationForm/ValidationForm';

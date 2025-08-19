@@ -1,0 +1,93 @@
+/* -------------------- StepUIComponent -------------------- */
+.StepUIComponentWrapperDiv {
+  position: relative;
+  width: 400px;
+  max-width: 90%;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  padding: 24px 16px 40px;
+  font-family: Arial, sans-serif;
+}
+
+.StepUIComponentStepCount {
+  min-height: 120px;
+  margin-bottom: 24px;
+  padding: 12px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background-color: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #333;
+}
+
+.StepUIComponentNavigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+
+.StepUIComponentCloseButton {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.2s;
+}
+
+.closeButton:hover {
+  color: #e74c3c;
+}
+
+.StepUIComponentCancelButton {
+  background-color: #f58484;
+  color: #333;
+}
+
+.StepUIComponentCancelButton:hover {
+  background-color: #e0e0e0;
+}
+
+.StepUIComponentPreviousButton {
+  background-color: #d0d0ff;
+  color: #2c3e50;
+}
+
+.StepUIComponentPreviousButton:hover {
+  background-color: #a8a8ff;
+}
+
+.StepUIComponentNextButton {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.StepUIComponentNextButton:hover {
+  background-color: #2980b9;
+}
+
+.StepUIComponentCompleteButton {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+.StepUIComponentCompleteButton:hover {
+  background-color: #27ae60;
+}

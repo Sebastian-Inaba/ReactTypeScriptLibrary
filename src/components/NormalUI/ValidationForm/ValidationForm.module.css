@@ -1,0 +1,84 @@
+/* -------------------- ValidationFormComponent -------------------- */
+.ValidationFormComponentWrapperDiv {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 24px;
+    max-width: 400px;
+    margin: 0 auto;
+    font-family: sans-serif;
+}
+
+.ValidationFormComponentContent {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ValidationFormComponentField label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #333;
+}
+
+.ValidationFormComponentField input {
+    width: 95%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.ValidationFormComponentField input:focus {
+    outline: none;
+    border-color: #4a90e2;
+}
+
+.ValidationFormComponentErrorInput {
+    border-color: #e74c3c !important;
+}
+
+.ValidationFormComponentErrorText {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.ValidationFormComponentNavigation {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.ValidationFormComponentSubmitButton {
+    background-color: #4a90e2;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.ValidationFormComponentSubmitButton:hover {
+    background-color: #357ab8;
+}
+
+.ValidationFormComponentCancelButton {
+    background-color: #eee;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.ValidationFormComponentCancelButton:hover {
+    background-color: #ddd;
+}
