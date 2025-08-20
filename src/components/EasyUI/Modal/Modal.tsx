@@ -24,7 +24,12 @@ function useDisableBodyScroll(isOpen: boolean) {
     }, [isOpen]);
 }
 
-export const ModalComponent: React.FC<ModalProps> = ({ isOpen, onClose, title, message }) => {
+export const ModalComponent: React.FC<ModalProps> = ({ 
+    isOpen, 
+    onClose, 
+    title, 
+    message,
+}) => {
     useDisableBodyScroll(isOpen);
 
     if (!isOpen) return null;

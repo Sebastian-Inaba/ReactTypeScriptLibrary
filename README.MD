@@ -17,7 +17,8 @@ To make this library easier to use and explore, I’m going to building a dedica
 
 ### Current Progress Updates
 
-- Added 2 more components Validation form and a stepper UI
+- Added 1 more component but still wip 
+- Fixed optional duration on alert component
 
 ### Why This Project?
 

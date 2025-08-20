@@ -13,8 +13,14 @@ type AvatarProps = {
     className?: string;
 };
 
-export const AvatarComponent: React.FC<AvatarProps> = ({ name = '', src, alt = 'Avatar', size = 'medium', className = '' }) => {
-    // Image in the avatar fallback to the first or first two letters of the name, of the user
+export const AvatarComponent: React.FC<AvatarProps> = ({ 
+    name = '', 
+    src, 
+    alt = 'Avatar', 
+    size = 'medium', 
+    className = '' 
+}) => {
+    // Image in the avatar fallback to the first or first two words of the name, of the user
     const nameFallBack = (name: string) => {
         const userName = name.trim().split(' '); // Trim whitespace and split name by spaces
         if (userName.length === 0) return 'User'; // Fallback to 'User' if no name is provided

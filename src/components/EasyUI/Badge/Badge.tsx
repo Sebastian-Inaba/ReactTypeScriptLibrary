@@ -9,7 +9,11 @@ type BadgeProp = {
     className?: string;
 };
 
-export const BadgeComponent: React.FC<BadgeProp> = ({ label, icon, className = '' }) => {
+export const BadgeComponent: React.FC<BadgeProp> = ({ 
+    label, 
+    icon, 
+    className = '' 
+}) => {
     return (
         <div className={`${style.SelectDropdownComponentDiv} ${className}`}>
             {icon && <span className={`${style.SelectDropdownComponentIcon} ${className}`}>{icon}</span>}

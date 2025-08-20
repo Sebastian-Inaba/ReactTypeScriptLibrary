@@ -29,7 +29,7 @@ export const AlertComponent: React.FC<AlertProps> = ({
     position = 'topCenter',
     title = 'Alert',
     message,
-    duration = 3000,
+    duration,
     onClose,
     onAction,
     actionLabel = 'Action',
@@ -59,7 +59,7 @@ export const AlertComponent: React.FC<AlertProps> = ({
 
     // Use effect which makes sure component closes after x duration
     useEffect(() => {
-        if (duration > 0) {
+        if (typeof duration === "number" && duration > 0) {
             const timer = setTimeout(() => {
                 setIsVisible(false);
                 onClose?.();
@@ -67,6 +67,7 @@ export const AlertComponent: React.FC<AlertProps> = ({
             return () => clearTimeout(timer);
         }
     }, [duration, onClose]);
+
 
     // And if its not already visible return nothing
     if (!isVisible) return null;
