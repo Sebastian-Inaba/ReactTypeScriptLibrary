@@ -9,62 +9,46 @@ interface ImageCarouselProps {
     className?: string;
 }
 
-export const ImageCarouselComponent: React.FC<ImageCarouselProps> = ({
-    images,
-    interval,
-    className,
-}) => {
+export const ImageCarouselComponent: React.FC<ImageCarouselProps> = ({ images, interval, className }) => {
     const [currentImage, setCurrentImage] = useState(0);
     const [autoPlay, setAutoPlay] = useState(true);
     const autoPlayInterval = interval || 3000;
 
     const nextImage = () => {
-        setCurrentImage(state => (state + 1) % images.length);
+        setCurrentImage((state) => (state + 1) % images.length);
     };
     const prevImage = () => {
-        setCurrentImage(state => (state - 1 + images.length) % images.length);
+        setCurrentImage((state) => (state - 1 + images.length) % images.length);
     };
-
 
     useEffect(() => {
         if (!autoPlay) return;
 
         const timer = setInterval(() => {
-            setCurrentImage(state => (state + 1) % images.length);
+            setCurrentImage((state) => (state + 1) % images.length);
         }, autoPlayInterval);
 
         return () => clearInterval(timer);
     }, [autoPlay, autoPlayInterval, images.length]);
 
-
     return (
-        <div 
+        <div
             className={`${style.ImageCarouselComponentCarousel} ${className}`}
             onMouseEnter={() => setAutoPlay(false)}
             onMouseLeave={() => setAutoPlay(true)}
-            >
-            <img
-                src={images[currentImage]}
-                alt={`Slide ${currentImage + 1}`}
-                className={style.ImageCarouselComponentCarouselImage}
-            />
+        >
+            <img src={images[currentImage]} alt={`Slide ${currentImage + 1}`} className={style.ImageCarouselComponentCarouselImage} />
             <div className={style.controls}>
-                <button
-                    onClick={nextImage}
-                    className={style.ImageCarouselComponentPrevButton}
-                >
+                <button onClick={nextImage} className={style.ImageCarouselComponentPrevButton}>
                     {'<'}
                 </button>
-                <button
-                    onClick={prevImage}
-                    className={style.ImageCarouselComponentNextButton}
-                >
+                <button onClick={prevImage} className={style.ImageCarouselComponentNextButton}>
                     {'>'}
                 </button>
             </div>
         </div>
-    )
-}
+    );
+};
 
 /*
 

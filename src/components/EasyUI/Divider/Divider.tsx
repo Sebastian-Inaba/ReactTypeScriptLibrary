@@ -8,10 +8,7 @@ interface DividerProps {
     vertical?: boolean;
 }
 
-export const DividerComponent: React.FC<DividerProps> = ({ 
-    vertical = false, 
-    className = '' 
-}) => {
+export const DividerComponent: React.FC<DividerProps> = ({ vertical = false, className = '' }) => {
     return (
         <div
             className={`${className} ${style.DividerComponentDiv} ${vertical ? style.DividerComponentVerticalPosition : style.DividerComponentHorizontalPosition}`}

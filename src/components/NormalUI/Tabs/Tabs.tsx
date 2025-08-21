@@ -11,13 +11,7 @@ interface TabsProps {
     orientation?: 'horizontal' | 'vertical';
 }
 
-export const TabsComponent: React.FC<TabsProps> = ({
-    tabs,
-    activeTab = 0,
-    onTabChange,
-    className,
-    orientation = 'horizontal',
-}) => {
+export const TabsComponent: React.FC<TabsProps> = ({ tabs, activeTab = 0, onTabChange, className, orientation = 'horizontal' }) => {
     const [ActiveTab, setActiveTab] = useState<number>(activeTab);
     const idPrefix = useId();
 
@@ -62,8 +56,8 @@ export const TabsComponent: React.FC<TabsProps> = ({
                     ${style.TabsComponentWrapperCustom}
                     ${className}
                 `}
-                role="tablist"
-                aria-orientation={orientation}
+            role="tablist"
+            aria-orientation={orientation}
         >
             <div className={`${style.TabsComponentHeaderGroup} ${style.TabsComponentHeaderGroupCustom} ${className}`}>
                 {tabs.map((tab, index) => {

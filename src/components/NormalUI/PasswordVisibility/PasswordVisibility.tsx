@@ -1,21 +1,16 @@
 import React, { useState } from 'react';
 import style from './PasswordVisibility.module.css';
 
-// Password Visibility Component 
+// Password Visibility Component
 
 interface PasswordVisibilityProps {
-    placeholder: string; 
+    placeholder: string;
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
     value?: string;
     className?: string;
 }
 
-export const PasswordVisibilityComponent: React.FC<PasswordVisibilityProps> = ({
-    placeholder,
-    onChange,
-    value,
-    className,
-}) => {
+export const PasswordVisibilityComponent: React.FC<PasswordVisibilityProps> = ({ placeholder, onChange, value, className }) => {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const inputType = isPasswordVisible ? 'text' : 'password';
 
@@ -31,20 +26,20 @@ export const PasswordVisibilityComponent: React.FC<PasswordVisibilityProps> = ({
                 onChange={onChange}
                 value={value}
                 className={style.PasswordVisibilityComponentInput}
-                alt='Password Input'
-                aria-label='Password Input'
+                alt="Password Input"
+                aria-label="Password Input"
             />
             <button
                 type="button"
                 onClick={togglePasswordVisibility}
                 className={style.PasswordVisibilityComponentButton}
-                aria-label='Toggle Password Visibility'
+                aria-label="Toggle Password Visibility"
             >
                 {isPasswordVisible ? 'Hide Password' : 'Show Password'}
             </button>
         </div>
-    )
-}
+    );
+};
 
 /*
 

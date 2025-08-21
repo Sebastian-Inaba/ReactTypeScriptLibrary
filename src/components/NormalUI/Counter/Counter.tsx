@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import style from "./Counter.module.css";
+import React, { useState } from 'react';
+import style from './Counter.module.css';
 
 interface CounterProps {
     initialCount?: number;
@@ -7,39 +7,37 @@ interface CounterProps {
     onCountChange?: (count: number) => void;
 }
 
-export const CounterComponent: React.FC<CounterProps> = ({
-    initialCount,
-    className,
-    onCountChange,
-}) => {
-    const [count, setCount] = useState<number>(initialCount || 1)
-
+export const CounterComponent: React.FC<CounterProps> = ({ initialCount, className, onCountChange }) => {
+    const [count, setCount] = useState<number>(initialCount || 1);
 
     function CounterUp() {
-        setCount(count => {
+        setCount((count) => {
             const newCount = count + 1;
-            onCountChange?.(newCount); 
+            onCountChange?.(newCount);
             return newCount;
         });
     }
 
     function CountDown() {
-        setCount(count => {
+        setCount((count) => {
             const newCount = Math.max(count - 1, 1);
             onCountChange?.(newCount);
             return newCount;
         });
     }
 
-    return(
+    return (
         <div className={`${style.counterWrapper} ${className}`}>
-            <button className={style.CounterComponentCounterUpButton} onClick={CounterUp}>+</button>
+            <button className={style.CounterComponentCounterUpButton} onClick={CounterUp}>
+                +
+            </button>
             <span className={style.CounterComponentSpan}>{count}</span>
-            <button className={style.CounterComponentCounterDownButton} onClick={CountDown}>-</button>
+            <button className={style.CounterComponentCounterDownButton} onClick={CountDown}>
+                -
+            </button>
         </div>
-    )
+    );
 };
-
 
 /*
 

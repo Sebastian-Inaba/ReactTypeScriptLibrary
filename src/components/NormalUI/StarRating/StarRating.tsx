@@ -1,37 +1,33 @@
-import React, { useState } from "react"; 
-import style from "./StarRating.module.css";
+import React, { useState } from 'react';
+import style from './StarRating.module.css';
 
 interface StarRatingProps {
     starRating?: number;
-    className?: string; 
+    className?: string;
     disabled: boolean;
 }
 
-export const StarRatingComponent: React.FC<StarRatingProps> = ({
-    starRating,
-    className,
-    disabled,
-}) => {
-    const [rating, setRating] = useState<number>(starRating || 0)
+export const StarRatingComponent: React.FC<StarRatingProps> = ({ starRating, className, disabled }) => {
+    const [rating, setRating] = useState<number>(starRating || 0);
     const [hover, setHover] = useState(0);
 
-    return(
+    return (
         <div className={`${style.StarRatingComponentWrapperDiv} ${className}`}>
-           {[1, 2, 3, 4, 5].map(i => (
-            <button
-                key={i}
-                onClick={() => !disabled && setRating(i)}
-                onMouseEnter={() => setHover(i)}       
-                onMouseLeave={() => setHover(0)} 
-                className={i <= (hover || rating) ? style.StarRatingComponentHighlight : style.StarRatingComponentNormal}
-                disabled={disabled}
-            >
-                ★
-            </button>
+            {[1, 2, 3, 4, 5].map((i) => (
+                <button
+                    key={i}
+                    onClick={() => !disabled && setRating(i)}
+                    onMouseEnter={() => setHover(i)}
+                    onMouseLeave={() => setHover(0)}
+                    className={i <= (hover || rating) ? style.StarRatingComponentHighlight : style.StarRatingComponentNormal}
+                    disabled={disabled}
+                >
+                    ★
+                </button>
             ))}
         </div>
-    )
-}
+    );
+};
 
 /*
 USE EXAMPLES:

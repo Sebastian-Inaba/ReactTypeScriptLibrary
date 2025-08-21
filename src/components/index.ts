@@ -16,7 +16,7 @@ export { AlertComponent } from './EasyUI/Alert/Alert';
 export { CardComponent } from './EasyUI/Card/Card';
 export { ModalComponent } from './EasyUI/Modal/Modal';
 export { AccordionComponent } from './NormalUI/Accordion/Accordion';
-export { TabsComponent } from './NormalUI/Tabs/Tabs'
+export { TabsComponent } from './NormalUI/Tabs/Tabs';
 export { ToastNotificationComponent } from './NormalUI/ToastNotification/ToastNotification';
 export { CounterComponent } from './NormalUI/Counter/Counter';
 export { StarRatingComponent } from './NormalUI/StarRating/StarRating';
@@ -24,3 +24,4 @@ export { PasswordVisibilityComponent } from './NormalUI/PasswordVisibility/Passw
 export { ImageCarouselComponent } from './NormalUI/ImageCarousel/ImageCarousel';
 export { StepUIComponent } from './NormalUI/StepUI/StepUI';
 export { ValidationFormComponent } from './NormalUI/ValidationForm/ValidationForm';
+export { FileUploaderComponent } from './NormalUI/FileUploader/FileUploader';

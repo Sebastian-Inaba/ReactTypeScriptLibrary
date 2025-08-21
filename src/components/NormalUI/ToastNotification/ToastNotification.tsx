@@ -1,19 +1,19 @@
-import React, { useState, useEffect, useRef } from "react";
-import style from "./ToastNotification.module.css";
+import React, { useState, useEffect, useRef } from 'react';
+import style from './ToastNotification.module.css';
 
 interface ToastNotificationProps {
     message: string;
     duration?: number;
-    onClick?: () => void;  
+    onClick?: () => void;
     className?: string;
     icon?: React.ReactNode;
 }
 
 export const ToastNotificationComponent: React.FC<ToastNotificationProps> = ({
-    message = "",
+    message = '',
     duration,
-    onClick,                
-    className = "",
+    onClick,
+    className = '',
     icon = null,
 }) => {
     const [isVisible, setIsVisible] = useState(false);
@@ -25,7 +25,7 @@ export const ToastNotificationComponent: React.FC<ToastNotificationProps> = ({
         if (duration) {
             timerRef.current = setTimeout(() => {
                 setIsVisible(false);
-                onClick?.(); 
+                onClick?.();
             }, duration * 1000);
         }
 
@@ -46,7 +46,7 @@ export const ToastNotificationComponent: React.FC<ToastNotificationProps> = ({
                         onClick={() => {
                             setIsVisible(false);
                             if (timerRef.current) clearTimeout(timerRef.current);
-                            onClick?.(); 
+                            onClick?.();
                         }}
                     >
                         X

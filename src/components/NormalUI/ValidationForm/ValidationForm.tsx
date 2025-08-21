@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useId } from 'react';
 import style from './ValidationForm.module.css';
 
-// ValidationForm component 
+// ValidationForm component
 
 interface FormData {
-  name: string;
-  email: string;
+    name: string;
+    email: string;
 }
 
 interface ValidationFormProps {
@@ -14,13 +14,9 @@ interface ValidationFormProps {
     className?: string;
 }
 
-export const ValidationFormComponent: React.FC<ValidationFormProps> = ({
-    onSubmit,
-    onCancel,
-    className = ''
-}) => {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
+export const ValidationFormComponent: React.FC<ValidationFormProps> = ({ onSubmit, onCancel, className = '' }) => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
 
     const nameId = useId();
     const emailId = useId();
@@ -29,9 +25,9 @@ export const ValidationFormComponent: React.FC<ValidationFormProps> = ({
 
     const validate = () => {
         const newErrors: { name?: string; email?: string } = {};
-        if (!name) newErrors.name = "Name is required";
-        if (!email) newErrors.email = "Email is required";
-        else if (!/\S+@\S+\.\S+/.test(email)) newErrors.email = "Email is invalid";
+        if (!name) newErrors.name = 'Name is required';
+        if (!email) newErrors.email = 'Email is required';
+        else if (!/\S+@\S+\.\S+/.test(email)) newErrors.email = 'Email is invalid';
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };
@@ -41,24 +37,23 @@ export const ValidationFormComponent: React.FC<ValidationFormProps> = ({
         if (validate()) {
             onSubmit({ name, email });
         }
-        setName("");
-        setEmail("");
+        setName('');
+        setEmail('');
         setErrors({});
     };
 
     const handleCancel = () => {
-        setName("");
-        setEmail("");
+        setName('');
+        setEmail('');
         setErrors({});
-        onCancel(); 
+        onCancel();
     };
-
 
     useEffect(() => {
         setErrors({});
     }, [name, email]);
 
-    return(
+    return (
         <form className={`${style.ValidationFormComponentWrapperDiv} ${className}`} onSubmit={handleSubmit}>
             <div className={style.ValidationFormComponentContent}>
                 <div className={style.ValidationFormComponentField}>
@@ -85,12 +80,16 @@ export const ValidationFormComponent: React.FC<ValidationFormProps> = ({
                 </div>
             </div>
             <div className={style.ValidationFormComponentNavigation}>
-                <button type="submit" className={style.ValidationFormComponentSubmitButton}>Submit</button>
-                <button type="button" onClick={handleCancel} className={style.ValidationFormComponentCancelButton}>Cancel</button>
+                <button type="submit" className={style.ValidationFormComponentSubmitButton}>
+                    Submit
+                </button>
+                <button type="button" onClick={handleCancel} className={style.ValidationFormComponentCancelButton}>
+                    Cancel
+                </button>
             </div>
         </form>
-    )
-}
+    );
+};
 
 /*
 

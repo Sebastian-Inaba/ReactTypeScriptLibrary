@@ -11,13 +11,7 @@ interface StepUIProps {
     onCancel?: () => void;
 }
 
-export const StepUIComponent: React.FC<StepUIProps> = ({
-    steps,
-    currentStep = 0,
-    className,
-    onComplete,
-    onCancel,
-}) => {
+export const StepUIComponent: React.FC<StepUIProps> = ({ steps, currentStep = 0, className, onComplete, onCancel }) => {
     const [activeStep, setActiveStep] = useState(currentStep);
 
     const nextStep = () => {
@@ -28,32 +22,37 @@ export const StepUIComponent: React.FC<StepUIProps> = ({
         setActiveStep((state) => Math.max(state - 1, 0));
     };
 
-    return(
+    return (
         <div className={`${styles.StepUIComponentWrapperDiv} ${className}`}>
-            <div className={styles.StepUIComponentStepCount}>
-                {steps[activeStep]}
-            </div>
-             {onCancel && (
+            <div className={styles.StepUIComponentStepCount}>{steps[activeStep]}</div>
+            {onCancel && (
                 <button className={styles.StepUIComponentCloseButton} onClick={onCancel}>
-                X
+                    X
                 </button>
             )}
             <div className={styles.StepUIComponentNavigation}>
                 {activeStep === 0 ? (
-                    <button onClick={onCancel} className={styles.StepUIComponentCancelButton}>Cancel</button>
+                    <button onClick={onCancel} className={styles.StepUIComponentCancelButton}>
+                        Cancel
+                    </button>
                 ) : (
-                    <button onClick={prevStep} className={styles.StepUIComponentPreviousButton}>Previous</button>
+                    <button onClick={prevStep} className={styles.StepUIComponentPreviousButton}>
+                        Previous
+                    </button>
                 )}
                 {activeStep < steps.length - 1 ? (
-                    <button onClick={nextStep} className={styles.StepUIComponentNextButton}>Next</button>
+                    <button onClick={nextStep} className={styles.StepUIComponentNextButton}>
+                        Next
+                    </button>
                 ) : (
-                    <button onClick={onComplete} className={styles.StepUIComponentCompleteButton}>Complete</button>  
+                    <button onClick={onComplete} className={styles.StepUIComponentCompleteButton}>
+                        Complete
+                    </button>
                 )}
             </div>
-
-        </div>    
-    )
-}
+        </div>
+    );
+};
 
 /*
 

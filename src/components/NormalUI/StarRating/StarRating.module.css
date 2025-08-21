@@ -1,37 +1,37 @@
 /* -------------------- StarRatingComponent -------------------- */
 .StarRatingComponentWrapperDiv {
-  display: flex;
-  align-items: center;
-  gap: 4px; 
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .StarRatingComponentNormal {
-  font-size: 2rem; 
-  color: #ccc; 
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: color 0.2s ease;
-  padding: 0;
+    font-size: 2rem;
+    color: #ccc;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    padding: 0;
 }
 
 .StarRatingComponentHighlight {
-  font-size: 2rem;
-  color: #ffb400; 
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: color 0.2s ease;
-  padding: 0;
+    font-size: 2rem;
+    color: #ffb400;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    padding: 0;
 }
 
 .StarRatingComponentNormal:hover,
 .StarRatingComponentHighlight:hover {
-  color: #ffc107; 
+    color: #ffc107;
 }
 
 button:disabled {
-  cursor: default;
-  pointer-events: none;
-  opacity: 0.8;
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.8;
 }

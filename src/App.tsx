@@ -26,6 +26,7 @@ import {
     ImageCarouselComponent,
     StepUIComponent,
     ValidationFormComponent,
+    FileUploaderComponent,
 } from './components/index';
 
 // This is currently used as a playground for testing the components.
@@ -47,7 +48,8 @@ function App() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [showToast, setShowToast] = useState(false);
     const [showStepper, setShowStepper] = useState(false);
-    const [formData, setFormData] = useState({ name: "", email: "" });
+    const [formData, setFormData] = useState({ name: '', email: '' });
+    const [file, setFile] = useState<File | null>(null);
 
     // Variables
     const averageRating = 4.2;
@@ -350,26 +352,41 @@ function App() {
                                 <h3>Tabs Example</h3>
                                 <TabsComponent
                                     tabs={[
-                                        {label: 'Profile A', content: <><p>Hello World</p> <ButtonComponent label='Button A' type='submit' onClick={() => alert('Button A')}/> </>},
-                                        {label: 'Profile B', content: <ButtonComponent label='Button B' type='submit' onClick={() => alert('Button B')} />},
-                                        {label: 'Profile C', content: <ButtonComponent label='Button C' type='submit' onClick={() => alert('Button C')} />},
+                                        {
+                                            label: 'Profile A',
+                                            content: (
+                                                <>
+                                                    <p>Hello World</p>{' '}
+                                                    <ButtonComponent
+                                                        label="Button A"
+                                                        type="submit"
+                                                        onClick={() => alert('Button A')}
+                                                    />{' '}
+                                                </>
+                                            ),
+                                        },
+                                        {
+                                            label: 'Profile B',
+                                            content: <ButtonComponent label="Button B" type="submit" onClick={() => alert('Button B')} />,
+                                        },
+                                        {
+                                            label: 'Profile C',
+                                            content: <ButtonComponent label="Button C" type="submit" onClick={() => alert('Button C')} />,
+                                        },
                                     ]}
-                                    orientation='horizontal'
+                                    orientation="horizontal"
                                 />
                             </section>
 
                             {/* ToastNotification + Button: components/EasyUI/Button/Button.tsx | components/NormalUI/ToastNotification/ToastNotification.tsx */}
                             <section>
                                 <h3>Toast Notification Example</h3>
-                                <ButtonComponent
-                                    label="Show Toast"
-                                    onClick={() => setShowToast(true)}
-                                />
+                                <ButtonComponent label="Show Toast" onClick={() => setShowToast(true)} />
                                 {showToast && (
                                     <ToastNotificationComponent
-                                        duration={2}   
+                                        duration={2}
                                         message="Hello, I'm a ToastNotification!"
-                                        onClick={() => setShowToast(false)} 
+                                        onClick={() => setShowToast(false)}
                                     />
                                 )}
                             </section>
@@ -377,7 +394,7 @@ function App() {
                             {/* Counter: components/NormalUI/Counter/Counter.tsx */}
                             <section>
                                 <h3>Counter Example</h3>
-                                <CounterComponent/>
+                                <CounterComponent />
                             </section>
 
                             {/* StarRating: components/NormalUI/StarRating/StarRating.tsx */}
@@ -386,20 +403,17 @@ function App() {
                                 <StarRatingComponent disabled={false} />
                                 <StarRatingComponent starRating={Math.round(averageRating)} disabled={true} />
                             </section>
-                            
+
                             {/* PasswordVisibility: components/NormalUI/PasswordVisibility/PasswordVisibility.tsx */}
                             <section>
                                 <h3>PasswordVisibility Example</h3>
-                                <PasswordVisibilityComponent placeholder='Password...'/>
+                                <PasswordVisibilityComponent placeholder="Password..." />
                             </section>
 
                             {/* ImageCarousel: components/NormalUI/ImageCarousel/ImageCarousel.tsx */}
                             <section>
                                 <h2>Carousel Example</h2>
-                                <ImageCarouselComponent
-                                    images={catImages}
-                                    interval={2500} 
-                                />
+                                <ImageCarouselComponent images={catImages} interval={2500} />
                             </section>
 
                             {/* StepUI: components/NormalUI/StepUI/StepUI.tsx */}
@@ -410,42 +424,42 @@ function App() {
 
                                     {showStepper && (
                                         <StepUIComponent
-                                        currentStep={0}
-                                        steps={[
-                                            <div>
-                                                <input
-                                                    type="text"
-                                                    placeholder="Name"
-                                                    value={formData.name}
-                                                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                                    style={{ width: "100%", padding: "8px" }}
-                                                    required
-                                                />
-                                            </div>,
-                                            <div>
-                                                <input
-                                                    type="email"
-                                                    placeholder="Email"
-                                                    value={formData.email}
-                                                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                                    style={{ width: "100%", padding: "8px" }}
-                                                    required
-                                                />
-                                            </div>,
-                                            <div>
-                                                <strong>Review:</strong>
-                                                <p>Name: {formData.name}</p>
-                                                <p>Email: {formData.email}</p>
-                                            </div>,
-                                        ]}
-                                        onCancel={() => {
-                                            setFormData({ name: "", email: "" });
-                                            setShowStepper(false);
-                                        }}
-                                        onComplete={() => {
-                                            console.log("Form submitted:", formData);
-                                            setShowStepper(false);
-                                        }}
+                                            currentStep={0}
+                                            steps={[
+                                                <div>
+                                                    <input
+                                                        type="text"
+                                                        placeholder="Name"
+                                                        value={formData.name}
+                                                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                                        style={{ width: '100%', padding: '8px' }}
+                                                        required
+                                                    />
+                                                </div>,
+                                                <div>
+                                                    <input
+                                                        type="email"
+                                                        placeholder="Email"
+                                                        value={formData.email}
+                                                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                                        style={{ width: '100%', padding: '8px' }}
+                                                        required
+                                                    />
+                                                </div>,
+                                                <div>
+                                                    <strong>Review:</strong>
+                                                    <p>Name: {formData.name}</p>
+                                                    <p>Email: {formData.email}</p>
+                                                </div>,
+                                            ]}
+                                            onCancel={() => {
+                                                setFormData({ name: '', email: '' });
+                                                setShowStepper(false);
+                                            }}
+                                            onComplete={() => {
+                                                console.log('Form submitted:', formData);
+                                                setShowStepper(false);
+                                            }}
                                         />
                                     )}
                                 </div>
@@ -454,32 +468,38 @@ function App() {
                             {/* Validation Form: components/NormalUI/ValidationForm/ValidationForm.tsx */}
                             <section>
                                 <h3>Validation Form example</h3>
-                                    <ValidationFormComponent
-                                        onSubmit={(data) => {
-                                            console.log('Form submitted:', data);
-                                        }}
-                                        onCancel={() => {
-                                            console.log('Form cancelled');
-                                        }}      
-                                    />
+                                <ValidationFormComponent
+                                    onSubmit={(data) => {
+                                        console.log('Form submitted:', data);
+                                    }}
+                                    onCancel={() => {
+                                        console.log('Form cancelled');
+                                    }}
+                                />
                             </section>
-                            
+
+                            {/* FileUploaderComponent: components/NormalUI/FileUploader/FileUploader.tsx */}
+                            <section>
+                                <h3>File Uploader example</h3>
+                                <div style={{ maxWidth: '400px', margin: '50px auto' }}>
+                                    <h2>Drag & Drop File Uploader</h2>
+                                    <FileUploaderComponent onFileChange={setFile} />
+                                    {file && (
+                                        <div style={{ marginTop: '20px' }}>
+                                            <strong>Selected file:</strong> {file.name}
+                                        </div>
+                                    )}
+                                </div>
+                            </section>
+
                             {/* Component Type: components/NormalUI/path/path.tsx */}
                             <section>
                                 <h3>Header Here</h3>
-
                             </section>
 
                             {/* Component Type: components/NormalUI/path/path.tsx */}
                             <section>
                                 <h3>Header Here</h3>
-
-                            </section>
-
-                            {/* Component Type: components/NormalUI/path/path.tsx */}
-                            <section>
-                                <h3>Header Here</h3>
-
                             </section>
                         </div>
                     </div>
