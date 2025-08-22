@@ -27,6 +27,7 @@ import {
     StepUIComponent,
     ValidationFormComponent,
     FileUploaderComponent,
+    ColorPickerComponent,
 } from './components/index';
 
 // This is currently used as a playground for testing the components.
@@ -478,7 +479,7 @@ function App() {
                                 />
                             </section>
 
-                            {/* FileUploaderComponent: components/NormalUI/FileUploader/FileUploader.tsx */}
+                            {/* File Uploader: components/NormalUI/FileUploader/FileUploader.tsx */}
                             <section>
                                 <h3>File Uploader example</h3>
                                 <div style={{ maxWidth: '400px', margin: '50px auto' }}>
@@ -492,9 +493,15 @@ function App() {
                                 </div>
                             </section>
 
-                            {/* Component Type: components/NormalUI/path/path.tsx */}
+                            {/* Color Picker: components/NormalUI/ColorPicker/ColorPicker.tsx */}
                             <section>
-                                <h3>Header Here</h3>
+                                <h3>ColorPicker example</h3>
+                                <ColorPickerComponent
+                                    onChange={(color) => console.log('Selected color:', color)}
+                                    color="#ff0000"
+                                    swatches={['#ff0000', '#00ff00', '#0000ff', '#ffff00']}
+                                    showSwatches={true}
+                                />
                             </section>
 
                             {/* Component Type: components/NormalUI/path/path.tsx */}

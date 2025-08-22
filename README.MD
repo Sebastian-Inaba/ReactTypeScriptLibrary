@@ -17,8 +17,8 @@ To make this library easier to use and explore, I’m going to building a dedica
 
 ### Current Progress Updates
 
-- Added 1 more component but still wip 
-- Fixed optional duration on alert component
+- Fixed personal problem with file uploader component
+- Added color picker component with react library 'react-color'
 
 ### Why This Project?
 

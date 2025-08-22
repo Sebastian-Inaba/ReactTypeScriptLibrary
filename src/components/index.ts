@@ -25,3 +25,4 @@ export { ImageCarouselComponent } from './NormalUI/ImageCarousel/ImageCarousel';
 export { StepUIComponent } from './NormalUI/StepUI/StepUI';
 export { ValidationFormComponent } from './NormalUI/ValidationForm/ValidationForm';
 export { FileUploaderComponent } from './NormalUI/FileUploader/FileUploader';
+export { ColorPickerComponent } from './NormalUI/ColorPicker/ColorPicker';

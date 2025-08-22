@@ -5,7 +5,6 @@
     border-radius: 8px;
     padding: 20px;
     text-align: center;
-    cursor: pointer;
     transition:
         border-color 0.2s,
         background-color 0.2s;
@@ -24,6 +23,14 @@
 .FileUploaderComponentDropzone {
     font-size: 16px;
     color: #666;
+    cursor: pointer;
+    border: 1px solid #000;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.FileUploaderComponentDropzone:hover {
+    background-color: #e9ecef;
 }
 
 .FileUploaderComponentError {
@@ -52,32 +59,63 @@
 }
 
 .FileUploaderComponentHoverPreview {
-    position: fixed; 
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 15px;
+    padding: 20px;
     z-index: 1000;
     background-color: white;
     border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    width: 90vw;        
     max-width: 1000px;
-    max-height: 90vh;   
-    overflow: auto;     
-    pointer-events: auto; 
+    max-height: 1000px;
+    overflow: auto;
+}
+
+.FileUploaderComponentCloseButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background-color: #f44336;
+    color: white;
+    border: 1px solid #000;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+    z-index: 1100;
+}
+
+.FileUploaderComponentCloseButton:hover {
+    background-color: #d32f2f;
 }
 
 .FileUploaderComponentPreviewImage,
-.FileUploaderComponentPreviewVideo,
-.FileUploaderComponentPreviewAudio,
-.FileUploaderComponentPreviewPdf {
-    width: 100%;
+.FileUploaderComponentPreviewVideo {
+    max-width: 100%;
+    max-height: 85vh;
     height: auto;
-    max-height: 85vh; 
+    width: auto;
     display: block;
     margin: 0 auto;
+}
+
+.FileUploaderComponentPreviewPdf {
+    width: 90vh;
+    height: 85vh;
+    border: none;
+}
+
+.FileUploaderComponentPreviewAudio {
+    width: 100%;
 }
 
 .FileUploaderComponentPreviewFallback {
